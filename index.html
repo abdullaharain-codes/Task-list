@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colorful To-Do List | Portfolio Project</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="theme-default">
+    <div class="container">
+        <header class="app-header">
+            <div class="header-content">
+                <h1><i class="fas fa-check-circle"></i> Colorful To-Do</h1>
+                <p>Organize your life with style</p>
+            </div>
+            <div class="theme-switcher">
+                <span>Theme:</span>
+                <button class="theme-btn theme-default active" data-theme="default"></button>
+                <button class="theme-btn theme-dark" data-theme="dark"></button>
+                <button class="theme-btn theme-nature" data-theme="nature"></button>
+                <button class="theme-btn theme-sunset" data-theme="sunset"></button>
+                <button class="theme-btn theme-ocean" data-theme="ocean"></button>
+            </div>
+        </header>
+
+        <div class="app-container">
+            <div class="input-section">
+                <input type="text" id="taskInput" placeholder="What needs to be done?" autocomplete="off">
+                <button id="addTaskBtn" class="btn-primary">
+                    <i class="fas fa-plus"></i> Add Task
+                </button>
+            </div>
+
+            <div class="controls">
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="searchInput" placeholder="Search tasks...">
+                </div>
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="active">Active</button>
+                    <button class="filter-btn" data-filter="completed">Completed</button>
+                </div>
+            </div>
+
+            <div class="task-stats">
+                <div class="stat-item">
+                    <i class="fas fa-tasks"></i>
+                    <span id="totalTasks">0</span> tasks
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-check-circle"></i>
+                    <span id="completedTasks">0</span> completed
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-fire"></i>
+                    <span id="activeTasks">0</span> active
+                </div>
+            </div>
+
+            <ul id="taskList" class="task-list">
+                <!-- Tasks will be added here dynamically -->
+            </ul>
+
+            <div class="empty-state" id="emptyState">
+                <img src="https://cdn-icons-png.flaticon.com/512/4076/4076478.png" alt="No tasks" class="empty-img">
+                <h3>No tasks yet!</h3>
+                <p>Add your first task to get started</p>
+            </div>
+        </div>
+
+        <footer class="app-footer">
+            <p>Created with <i class="fas fa-heart"></i> for my portfolio - <span id="currentYear"></span></p>
+        </footer>
+    </div>
+
+    <!-- Edit Task Modal -->
+    <div id="editModal" class="modal">
+        <div class="modal-content animate-in">
+            <span class="close-btn">&times;</span>
+            <h2><i class="fas fa-edit"></i> Edit Task</h2>
+            <input type="text" id="editTaskInput" class="modal-input">
+            <button id="saveEditBtn" class="btn-primary modal-btn">
+                <i class="fas fa-save"></i> Save Changes
+            </button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
